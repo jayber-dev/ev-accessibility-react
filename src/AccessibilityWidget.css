@@ -9,6 +9,20 @@
 	z-index: 9999;
 }
 
+.ev-a11y-declaration-link {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: #0f62fe;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.ev-a11y-declaration-link:focus-visible {
+  outline: 3px solid #0f62fe;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
 .ev-a11y-panel {
 	position: fixed;
 	z-index: 9999;

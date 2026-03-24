@@ -114,7 +114,7 @@ var TEXT = {
     highlightFocusDesc: "Show a stronger keyboard focus indicator."
   }
 };
-var Accessibility = ({ lang = "eng", position = "br", a11yDeclaration = "" }) => {
+var Accessibility = ({ lang = "eng", position = "br", declarationUrl = "" }) => {
   const t = TEXT[lang];
   const isHebrew = lang === "heb";
   const [open, setOpen] = (0, import_react.useState)(false);
@@ -238,7 +238,6 @@ var Accessibility = ({ lang = "eng", position = "br", a11yDeclaration = "" }) =>
         lang,
         className: `ev-a11y-panel ${panelVerticalClass} ${panelHorizontalClass}`,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { className: "", href: a11yDeclaration, children: t.a11yDeclaration }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "ev-a11y-header", children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { id: "accessibility-title", className: "ev-a11y-title", children: t.title }),
@@ -362,7 +361,8 @@ var Accessibility = ({ lang = "eng", position = "br", a11yDeclaration = "" }) =>
                 checked: settings.highlightFocus,
                 onChange: () => updateSetting("highlightFocus", !settings.highlightFocus)
               }
-            )
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { href: declarationUrl, className: "ev-a11y-declaration-link", children: t.a11yDeclaration })
           ] }),
           /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "ev-a11y-actions", children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { type: "button", onClick: resetAll, className: "ev-a11y-reset", children: t.reset }),

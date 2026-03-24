@@ -20,7 +20,7 @@ export type AccessibilitySettings = {
 export type AccessibilityProps = {
 	lang?: Lang;
 	position?: Position;
-	a11yDeclarationUrl: string; 
+	declarationUrl?: string;
 };
 
 const STORAGE_KEY = "site-accessibility-settings";
@@ -112,7 +112,7 @@ const TEXT = {
 	},
 } as const;
 
-const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = "br", a11yDeclarationUrl }) => {
+const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = "br", declarationUrl = "" }) => {
 	const t = TEXT[lang];
 	const isHebrew = lang === "heb";
 	const [open, setOpen] = useState(false);
@@ -259,9 +259,6 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 					lang={lang}
 					className={`ev-a11y-panel ${panelVerticalClass} ${panelHorizontalClass}`}
 				>
-					<a href={ a11yDeclarationUrl}>
-						{t.a11yDeclaration} Declaration
-					</a>
 					<div className="ev-a11y-header">
 						<div>
 							<h2 id="accessibility-title" className="ev-a11y-title">
@@ -269,7 +266,6 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 							</h2>
 							<p className="ev-a11y-subtitle">{t.subtitle}</p>
 						</div>
-
 						<button
 							type="button"
 							onClick={() => {
@@ -284,6 +280,7 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 					</div>
 
 					<div className="ev-a11y-body">
+
 						<section className="ev-a11y-section">
 							<div>
 								<h3 className="ev-a11y-section-title">{t.textSize}</h3>
@@ -291,6 +288,7 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 									{t.currentSize}: {textSizeLabel}
 								</p>
 							</div>
+							
 
 							<div className="ev-a11y-size-grid">
 								{(["normal", "medium", "large", "xlarge"] as TextSize[]).map((size) => {
@@ -309,6 +307,7 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 								})}
 							</div>
 						</section>
+
 
 						<ToggleRow
 							isHebrew={isHebrew}
@@ -373,9 +372,12 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 							checked={settings.highlightFocus}
 							onChange={() => updateSetting("highlightFocus", !settings.highlightFocus)}
 						/>
+
+						<a href={declarationUrl} className="ev-a11y-declaration-link">
+								{t.a11yDeclaration}
+							</a>
 					</div>
 
-					
 					<div className="ev-a11y-actions">
 						<button type="button" onClick={resetAll} className="ev-a11y-reset">
 							{t.reset}

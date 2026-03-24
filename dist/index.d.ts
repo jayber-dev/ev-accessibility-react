@@ -17,7 +17,7 @@ type AccessibilitySettings = {
 type AccessibilityProps = {
     lang?: Lang;
     position?: Position;
-    a11yDeclaration: string;
+    declarationUrl?: string;
 };
 declare const Accessibility: React.FC<AccessibilityProps>;
 

@@ -88,7 +88,7 @@ var TEXT = {
     highlightFocusDesc: "Show a stronger keyboard focus indicator."
   }
 };
-var Accessibility = ({ lang = "eng", position = "br", a11yDeclaration = "" }) => {
+var Accessibility = ({ lang = "eng", position = "br", declarationUrl = "" }) => {
   const t = TEXT[lang];
   const isHebrew = lang === "heb";
   const [open, setOpen] = useState(false);
@@ -212,7 +212,6 @@ var Accessibility = ({ lang = "eng", position = "br", a11yDeclaration = "" }) =>
         lang,
         className: `ev-a11y-panel ${panelVerticalClass} ${panelHorizontalClass}`,
         children: [
-          /* @__PURE__ */ jsx("a", { className: "", href: a11yDeclaration, children: t.a11yDeclaration }),
           /* @__PURE__ */ jsxs("div", { className: "ev-a11y-header", children: [
             /* @__PURE__ */ jsxs("div", { children: [
               /* @__PURE__ */ jsx("h2", { id: "accessibility-title", className: "ev-a11y-title", children: t.title }),
@@ -336,7 +335,8 @@ var Accessibility = ({ lang = "eng", position = "br", a11yDeclaration = "" }) =>
                 checked: settings.highlightFocus,
                 onChange: () => updateSetting("highlightFocus", !settings.highlightFocus)
               }
-            )
+            ),
+            /* @__PURE__ */ jsx("a", { href: declarationUrl, className: "ev-a11y-declaration-link", children: t.a11yDeclaration })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "ev-a11y-actions", children: [
             /* @__PURE__ */ jsx("button", { type: "button", onClick: resetAll, className: "ev-a11y-reset", children: t.reset }),

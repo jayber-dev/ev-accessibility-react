@@ -212,11 +212,11 @@ var Accessibility = ({ lang = "eng", position = "br", a11yDeclaration = "" }) =>
         lang,
         className: `ev-a11y-panel ${panelVerticalClass} ${panelHorizontalClass}`,
         children: [
+          /* @__PURE__ */ jsx("a", { className: "", href: a11yDeclaration, children: t.a11yDeclaration }),
           /* @__PURE__ */ jsxs("div", { className: "ev-a11y-header", children: [
             /* @__PURE__ */ jsxs("div", { children: [
               /* @__PURE__ */ jsx("h2", { id: "accessibility-title", className: "ev-a11y-title", children: t.title }),
-              /* @__PURE__ */ jsx("p", { className: "ev-a11y-subtitle", children: t.subtitle }),
-              a11yDeclaration.length > 0 && /* @__PURE__ */ jsx("a", { className: "ev-a11y-subtitle", href: a11yDeclaration, children: t.a11yDeclaration })
+              /* @__PURE__ */ jsx("p", { className: "ev-a11y-subtitle", children: t.subtitle })
             ] }),
             /* @__PURE__ */ jsx(
               "button",

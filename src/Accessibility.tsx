@@ -20,7 +20,7 @@ export type AccessibilitySettings = {
 export type AccessibilityProps = {
 	lang?: Lang;
 	position?: Position;
-	a11yDeclaration: string; // link to declaration http://....;
+	a11yDeclarationUrl: string; 
 };
 
 const STORAGE_KEY = "site-accessibility-settings";
@@ -112,7 +112,7 @@ const TEXT = {
 	},
 } as const;
 
-const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = "br", a11yDeclaration = "" }) => {
+const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = "br", a11yDeclarationUrl }) => {
 	const t = TEXT[lang];
 	const isHebrew = lang === "heb";
 	const [open, setOpen] = useState(false);
@@ -259,15 +259,15 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 					lang={lang}
 					className={`ev-a11y-panel ${panelVerticalClass} ${panelHorizontalClass}`}
 				>
+					<a href={ a11yDeclarationUrl}>
+						{t.a11yDeclaration} Declaration
+					</a>
 					<div className="ev-a11y-header">
 						<div>
 							<h2 id="accessibility-title" className="ev-a11y-title">
 								{t.title}
 							</h2>
 							<p className="ev-a11y-subtitle">{t.subtitle}</p>
-							<a className="ev-a11y-subtitle" href={a11yDeclaration}>
-								{t.a11yDeclaration}
-							</a>
 						</div>
 
 						<button
@@ -375,6 +375,7 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 						/>
 					</div>
 
+					
 					<div className="ev-a11y-actions">
 						<button type="button" onClick={resetAll} className="ev-a11y-reset">
 							{t.reset}

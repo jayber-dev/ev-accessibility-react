@@ -1,0 +1,48 @@
+{
+	"name": "ev-accessibility-react",
+	"version": "1.0.6",
+	"description": "A React accessibility widget with RTL/LTR support and built-in accessibility modes",
+	"license": "MIT",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./style.css": "./dist/index.css"
+	},
+	"files": [
+		"dist"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"prepublishOnly": "npm run build"
+	},
+	"peerDependencies": {
+		"react": "^18 || ^19",
+		"react-dom": "^18 || ^19"
+	},
+	"dependencies": {
+		"react-icons": "^5.5.0"
+	},
+	"devDependencies": {
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"tsup": "^8.5.1",
+		"typescript": "^5.9.3"
+	},
+	"keywords": [
+		"react",
+		"accessibility",
+		"a11y",
+		"widget",
+		"rtl",
+		"hebrew"
+	]
+}

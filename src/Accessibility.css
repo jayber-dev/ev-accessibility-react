@@ -1,0 +1,197 @@
+
+
+.accessibility-large-text body {
+	font-size: 18px;
+}
+
+.accessibility-large-text h1 {
+	font-size: 2.5rem;
+}
+
+.accessibility-large-text h2 {
+	font-size: 2rem;
+}
+
+.accessibility-large-text h3 {
+	font-size: 1.5rem;
+}
+
+/* .accessibility-high-contrast body {
+	background: #ffffff !important;
+	color: #000000 !important;
+} */
+
+.accessibility-high-contrast * {
+	border-color: #000000 !important;
+	color: white;
+	mix-blend-mode: difference;
+	box-shadow: none !important;
+}
+
+.accessibility-high-contrast a {
+	/* color: #0033cc !important; */
+	text-decoration: underline !important;
+}
+
+.accessibility-reduced-motion *,
+.accessibility-reduced-motion *::before,
+.accessibility-reduced-motion *::after {
+	animation: none !important;
+	transition: none !important;
+	scroll-behavior: auto !important;
+}
+
+/* =========================
+   TEXT SIZE
+========================= */
+
+.a11y-text-normal {
+  font-size: 100%;
+}
+
+.a11y-text-medium {
+  font-size: 112.5%;
+}
+
+.a11y-text-large {
+  font-size: 125%;
+}
+
+.a11y-text-xlarge {
+  font-size: 137.5%;
+}
+
+/* Optional: make headings scale a bit more clearly */
+.a11y-text-medium h1 { font-size: 2.7rem; }
+.a11y-text-medium h2 { font-size: 2.2rem; }
+.a11y-text-medium h3 { font-size: 1.8rem; }
+
+.a11y-text-large h1 { font-size: 3rem; }
+.a11y-text-large h2 { font-size: 2.4rem; }
+.a11y-text-large h3 { font-size: 2rem; }
+
+.a11y-text-xlarge h1 { font-size: 3.3rem; }
+.a11y-text-xlarge h2 { font-size: 2.7rem; }
+.a11y-text-xlarge h3 { font-size: 2.2rem; }
+
+/* =========================
+   BLACK AND WHITE
+========================= */
+
+.a11y-grayscale {
+  filter: grayscale(1);
+}
+
+/* =========================
+   HIGH CONTRAST
+========================= */
+
+.a11y-high-contrast body {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.a11y-high-contrast main,
+.a11y-high-contrast section,
+.a11y-high-contrast article,
+.a11y-high-contrast aside,
+.a11y-high-contrast nav,
+.a11y-high-contrast header,
+.a11y-high-contrast footer,
+.a11y-high-contrast div {
+  background-image: none !important;
+}
+
+.a11y-high-contrast * {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  border-color: #000000 !important;
+}
+
+.a11y-high-contrast a {
+  color: #0033cc !important;
+  text-decoration: underline !important;
+}
+
+.a11y-high-contrast button {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* =========================
+   INVERT COLORS
+========================= */
+
+.a11y-invert {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Prevent double weird inversion on media */
+.a11y-invert img,
+.a11y-invert video,
+.a11y-invert iframe,
+.a11y-invert svg,
+.a11y-invert canvas {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* =========================
+   UNDERLINE LINKS
+========================= */
+
+.a11y-underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 2px;
+}
+
+/* =========================
+   READABLE FONT
+========================= */
+
+.a11y-readable-font,
+.a11y-readable-font body,
+.a11y-readable-font button,
+.a11y-readable-font input,
+.a11y-readable-font select,
+.a11y-readable-font textarea {
+  font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.02em;
+  word-spacing: 0.06em;
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+.a11y-reduced-motion *,
+.a11y-reduced-motion *::before,
+.a11y-reduced-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* =========================
+   HIGHLIGHT HEADINGS
+========================= */
+
+.a11y-highlight-headings h1,
+.a11y-highlight-headings h2,
+.a11y-highlight-headings h3,
+.a11y-highlight-headings h4,
+.a11y-highlight-headings h5,
+.a11y-highlight-headings h6 {
+  outline: 3px solid #f59e0b;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* =========================
+   STRONG FOCUS OUTLINE
+========================= */
+
+.a11y-highlight-focus *:focus-visible {
+  outline: 4px solid #f59e0b !important;
+  outline-offset: 3px !important;
+}

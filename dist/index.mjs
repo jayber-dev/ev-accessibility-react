@@ -17,6 +17,7 @@ var defaultSettings = {
 var TEXT = {
   heb: {
     openMenu: "\u05E4\u05EA\u05D7 \u05EA\u05E4\u05E8\u05D9\u05D8 \u05E0\u05D2\u05D9\u05E9\u05D5\u05EA",
+    a11yDeclaration: "\u05D4\u05E6\u05D4\u05E8\u05EA \u05E0\u05D2\u05D9\u05E9\u05D5\u05EA",
     closeMenu: "\u05E1\u05D2\u05D5\u05E8 \u05EA\u05E4\u05E8\u05D9\u05D8 \u05E0\u05D2\u05D9\u05E9\u05D5\u05EA",
     buttonLabel: "\u05E0\u05D2\u05D9\u05E9\u05D5\u05EA",
     buttonHelper: "Alt+a \u05DC\u05E4\u05EA\u05D9\u05D7\u05D4",
@@ -53,6 +54,7 @@ var TEXT = {
   eng: {
     openMenu: "Open accessibility menu",
     closeMenu: "Close accessibility menu",
+    a11yDeclaration: "Accessibility Declaration",
     buttonLabel: "Accessibility",
     buttonHelper: "Alt+a to open",
     title: "Accessibility settings",
@@ -86,7 +88,7 @@ var TEXT = {
     highlightFocusDesc: "Show a stronger keyboard focus indicator."
   }
 };
-var Accessibility = ({ lang = "eng", position = "br" }) => {
+var Accessibility = ({ lang = "eng", position = "br", a11yDeclaration = "" }) => {
   const t = TEXT[lang];
   const isHebrew = lang === "heb";
   const [open, setOpen] = useState(false);
@@ -213,7 +215,8 @@ var Accessibility = ({ lang = "eng", position = "br" }) => {
           /* @__PURE__ */ jsxs("div", { className: "ev-a11y-header", children: [
             /* @__PURE__ */ jsxs("div", { children: [
               /* @__PURE__ */ jsx("h2", { id: "accessibility-title", className: "ev-a11y-title", children: t.title }),
-              /* @__PURE__ */ jsx("p", { className: "ev-a11y-subtitle", children: t.subtitle })
+              /* @__PURE__ */ jsx("p", { className: "ev-a11y-subtitle", children: t.subtitle }),
+              a11yDeclaration.length > 0 && /* @__PURE__ */ jsx("a", { className: "ev-a11y-subtitle", href: a11yDeclaration, children: t.a11yDeclaration })
             ] }),
             /* @__PURE__ */ jsx(
               "button",

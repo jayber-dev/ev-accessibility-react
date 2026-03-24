@@ -265,7 +265,9 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 								{t.title}
 							</h2>
 							<p className="ev-a11y-subtitle">{t.subtitle}</p>
-							{a11yDeclaration.length > 0 && <a className="ev-a11y-subtitle" href={a11yDeclaration}>{t.a11yDeclaration}</a>}
+							<a className="ev-a11y-subtitle" href={a11yDeclaration}>
+								{t.a11yDeclaration}
+							</a>
 						</div>
 
 						<button

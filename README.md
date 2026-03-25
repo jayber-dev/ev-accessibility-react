@@ -6,7 +6,7 @@ Built with accessibility (WCAG AA) in mind and designed to integrate seamlessly 
 
 ---
 
-## ✨ Features
+## Features
 
 - Accessibility panel (toggle UI)
 - Multi-language support (Hebrew / English)
@@ -18,7 +18,7 @@ Built with accessibility (WCAG AA) in mind and designed to integrate seamlessly 
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 npm install ev-accessibility-react
@@ -30,3 +30,14 @@ MIT License
 
 Developed by Yevgeny Bershadsky
 Technion – Israel Institute of Technology
+```
+
+## Usage
+
+- You must import the default styles:
+```jsx
+    import "ev-accessibility-react/style.css";
+
+    <Accessibility lang="heb" declarationUrl="https://example.com/accessibility" position="br" />
+```
+

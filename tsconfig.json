@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["DOM", "ES2020"],
-    "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "strict": true,
+    "jsx": "react-jsx",
+
+    "rootDir": "./src",
+    "outDir": "./dist",
+
     "declaration": true,
-    "emitDeclarationOnly": false,
+    "declarationDir": "./dist",
+
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "outDir": "dist"
+    "strict": true
   },
   "include": ["src"]
 }

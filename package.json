@@ -1,6 +1,6 @@
 {
 	"name": "ev-accessibility-react",
-	"version": "1.0.15",
+	"version": "1.0.16",
 	"description": "A React accessibility widget with RTL/LTR support and built-in accessibility modes",
 	"license": "MIT",
 	"main": "./dist/index.cjs",

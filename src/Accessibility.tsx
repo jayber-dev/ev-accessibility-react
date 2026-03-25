@@ -280,7 +280,6 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 					</div>
 
 					<div className="ev-a11y-body">
-
 						<section className="ev-a11y-section">
 							<div>
 								<h3 className="ev-a11y-section-title">{t.textSize}</h3>
@@ -288,7 +287,6 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 									{t.currentSize}: {textSizeLabel}
 								</p>
 							</div>
-							
 
 							<div className="ev-a11y-size-grid">
 								{(["normal", "medium", "large", "xlarge"] as TextSize[]).map((size) => {
@@ -307,7 +305,6 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 								})}
 							</div>
 						</section>
-
 
 						<ToggleRow
 							isHebrew={isHebrew}
@@ -373,9 +370,12 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 							onChange={() => updateSetting("highlightFocus", !settings.highlightFocus)}
 						/>
 
-						<a href={declarationUrl} className="ev-a11y-declaration-link">
-								{t.a11yDeclaration}
-							</a>
+						<a href={declarationUrl} target="_blank" rel="noopener noreferrer" className="ev-a11y-declaration-link">
+							<span className="ev-a11y-declaration-icon" aria-hidden="true">
+								📄
+							</span>
+							<span className="ev-a11y-declaration-text">{t.a11yDeclaration}</span>
+						</a>
 					</div>
 
 					<div className="ev-a11y-actions">

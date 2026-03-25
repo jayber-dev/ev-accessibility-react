@@ -370,12 +370,11 @@ const Accessibility: React.FC<AccessibilityProps> = ({ lang = "eng", position = 
 							onChange={() => updateSetting("highlightFocus", !settings.highlightFocus)}
 						/>
 
-						<a href={declarationUrl} target="_blank" rel="noopener noreferrer" className="ev-a11y-declaration-link">
-							<span className="ev-a11y-declaration-icon" aria-hidden="true">
-								📄
-							</span>
-							<span className="ev-a11y-declaration-text">{t.a11yDeclaration}</span>
-						</a>
+						{declarationUrl && (
+							<a href={declarationUrl} target="_blank" rel="noopener noreferrer" className="ev-a11y-declaration-link">
+								<span className="ev-a11y-declaration-text">{t.a11yDeclaration}</span>
+							</a>
+						)}
 					</div>
 
 					<div className="ev-a11y-actions">

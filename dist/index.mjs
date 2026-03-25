@@ -336,7 +336,7 @@ var Accessibility = ({ lang = "eng", position = "br", declarationUrl = "" }) => 
                 onChange: () => updateSetting("highlightFocus", !settings.highlightFocus)
               }
             ),
-            /* @__PURE__ */ jsx("a", { href: declarationUrl, className: "ev-a11y-declaration-link", children: t.a11yDeclaration })
+            declarationUrl && /* @__PURE__ */ jsx("a", { href: declarationUrl, target: "_blank", rel: "noopener noreferrer", className: "ev-a11y-declaration-link", children: /* @__PURE__ */ jsx("span", { className: "ev-a11y-declaration-text", children: t.a11yDeclaration }) })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "ev-a11y-actions", children: [
             /* @__PURE__ */ jsx("button", { type: "button", onClick: resetAll, className: "ev-a11y-reset", children: t.reset }),

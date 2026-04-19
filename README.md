@@ -29,7 +29,6 @@ npm install ev-accessibility-react
 MIT License
 
 Developed by Yevgeny Bershadsky
-Technion – Israel Institute of Technology
 ```
 
 ## Usage
